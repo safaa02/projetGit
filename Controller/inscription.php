@@ -112,37 +112,34 @@ if(isset($_POST['pseudo']) && isset($_POST['mdp']) && isset($_POST['mdpverif']) 
                         $ajout_utilisateur=$bd->prepare("INSERT INTO `utilisateur`(`pseudo`, `mail`, `mdp`, `numero_tel`) VALUES ('$pseudo','$mail','$mdp','$tel')");
                         $ajout_utilisateur->execute();  ?>
                         <script>alert("Votre compte est créé, rendez-vous sur la page de connexion");
+                            window.location.href="../Vue/formulaireDeConnexion";
                         </script><?php
 
                     }else{ ?>
                         <script>alert("Votre adresse mail n'est pas valable");
-                            document.location.href="C:/wamp64/www/projetGit/projetGit/Vue/inscription.php";
                         </script>     <?php
                     }
                 }else{
                     ?>
                         <script>alert("Votre mot de passe doit contenir au moins 8 caractères avec au minimum une majucule, deux chiffres et un caractère spécial");
-                            document.location.href="C:/wamp64/www/projetGit/projetGit/Vue/inscription.php";</script>     <?php
+                         </script>     <?php
                 }
             }else{
                 ?>
-                        <script>alert("Votre numéro de téléphone n'est pas dans un format valide");
-                            document.location.href="C:/wamp64/www/projetGit/projetGit/Vue/inscription.php";</script>     <?php
+                        <script>alert("Votre numéro de téléphone n'est pas dans un format valide");</script>     <?php
             }
         }else{?>
-        <script>alert("Votre numéro de téléphone n'est pas dans un format valide");
-            document.location.href="C:/wamp64/www/projetGit/projetGit/Vue/inscription.php";</script>     <?php
+        <script>alert("Votre numéro de téléphone n'est pas dans un format valide");</script>     <?php
 
     }
     }else{?>
-        <script>alert("Les deux mots de passe sont différents");
-            document.location.href="C:/wamp64/www/projetGit/projetGit/Vue/inscription.php";</script>     <?php
+        <script>alert("Les deux mots de passe sont différents");</script>     <?php
 
     }
 }
 ?>
     <script>
-            document.location.href="C:/wamp64/www/projetGit/projetGit/Vue/formulaireDeConnexion";
+            window.location.href="../Vue/formulaire_inscription";
     </script>
 </body>
 </html>
