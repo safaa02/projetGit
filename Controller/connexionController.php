@@ -22,7 +22,7 @@ if(!empty($_POST["mail"]) and !empty($_POST["password"])){
         session_start();
         $_SESSION["user"]= $result;
         //var_dump($_SESSION["user"]);
-        header("location:listes_jeux_Controller.php");
+        header("location:listesJeux_Controller.php");
     }
 }
 /*
