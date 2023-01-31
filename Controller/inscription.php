@@ -108,7 +108,6 @@ if(isset($_POST['pseudo']) && isset($_POST['mdp']) && isset($_POST['mdpverif']) 
                     }
                     if($arobase=="oui" && $point=="oui" && $id_point>$id_arobase && $nbrearobase==1 && $id_arobase>0 && ($id_point-1)>$id_arobase && ((strlen($mail)==$id_point+3) || (strlen($mail)==$id_point+4)))
                     {
-                        $mdp = crypt( $mdp, 'sha-256');
                         $ajout_utilisateur=$bd->prepare("INSERT INTO `utilisateur`(`pseudo`, `mail`, `mdp`, `numero_tel`) VALUES ('$pseudo','$mail','$mdp','$tel')");
                         $ajout_utilisateur->execute();  ?>
                         <script>alert("Votre compte est créé, rendez-vous sur la page de connexion");
